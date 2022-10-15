@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+SC&display=swap');
+
+
+*{
+
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto+Serif+SC',sans-serif;
+    background: url("./bg.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    box-sizing: border-box;
+}
+header
+{
+    border-radius: 10px;
+    position: relative;
+    margin: 20px auto;
+    padding: 10px;
+    background: rgba(134, 198, 220, 0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+}
+.logo
+{
+    float:left;
+    text-align: center;
+    line-height: 60px;
+    font-size: 36px;
+    padding: 0 20px;
+    color: rgba(14, 166, 234);
+    font-weight: 700;
+    text-decoration: none;
+
+}
+nav
+{
+    float:right;
+}
+.clear
+{
+    clear: both;
+}
+nav ul
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav ul li
+{
+    list-style: none;
+
+}
+nav ul li a
+{
+    display: block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #262626;
+    border-radius: 4px;
+    font-family: Cursive;
+    font-size: 20px;
+}
+nav ul li a.active,
+nav ul li a:hover
+{
+    background: rgba(14, 166, 234, 0.5);
+    color: #fff;
+    transition: 0.5s;
+}
+
+.main{
+    padding: 100px 0;
+    height: 1000px;
+    border: 10px;
+    position: relative;
+    margin: 0 auto;
+    background: rgba(134, 198, 220, 0.5);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 20px 5px rgb(32, 121, 154, 0.4);
+}
+
+.avatar{
+
+    height: 400px;
+    width: 400px;
+    margin: 100px auto;
+    border: #28b2b2 1px solid;
+    border-radius: 100%;
+    background: url(avatar.jpg);
+    background-size: 100% 100%;
+
+}
+.avatar-welcome{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 40px;
+}
+
+.home-content{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+
+.task{
+    height: 100px;
+    border: 10px;
+    position: relative;
+    margin: 20px auto;
+    width: 80%;
+    background: rgba(134, 198, 220, 0.8);
+    border-radius: 10px;
+    line-height: 10px;
+    box-sizing: border-box;
+}
+
+.task span{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    line-height: 100px;
+}
+.task i{
+    font-size: 25px;
+    margin-left: 50px;
+
+}
+
+.task:hover{
+    background: rgba(63, 181, 210, 0.6);
+    border: cadetblue 2px solid;
+    box-shadow: rgba(15, 63, 220, 0.2) 1px 1px 1px 1px;
+}
+
+
+
+@media screen and (max-width: 1200px)
+{
+    .main {
+        margin: auto;
+        height: 2000px;
+        width: 75%;
+        padding: 30px;
+    }
+}
+
+
+@media (max-width: 1200px)
+{
+    header
+    {
+        width: 80%;
+        margin: 20px auto;
+    }
+}
+@media (max-width: 768px)
+{
+    .mean-toggle
+    {
+        display: block;
+        width: auto;
+        height: auto;
+        margin: 10px;
+        float: right;
+        cursor: pointer;
+        text-align: center;
+        font-size: 30px;
+        color: rgba(14, 166, 234, 0.5);
+    }
+    .mean-toggle:before
+    {
+        content: '\f0c9';
+        font-family: fontAwesome;
+        line-height: 40px;
+    }
+    .mean-toggle.active:before
+    {
+        content: '\f00d';
+    }
+    nav
+    {
+        display:none;
+    }
+    nav.active
+    {
+        display:block;
+        width :100%;
+    }
+    nav.active ul
+    {
+        display: block;
+    }
+    nav.active ul li
+    {
+        margin: 0;
+        text-align: center;
+    }
+}

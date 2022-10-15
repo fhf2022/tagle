@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Navigation Bar</title>
+  <link rel="stylesheet" href="home/home.css" type="text/css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/2a361a68d2.js" crossorigin="anonymous"></script>
+  <script src="common/jquery.js"></script>
+  <style>
+    input[type=text],
+    select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type=submit] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    form {
+      width: 75%;
+      margin: auto;
+    }
+
+
+
+
+
+    .login-wrapper {
+      background-color: bisque;
+      width: 400px;
+      height: 700px;
+      border-radius: 15px;
+      padding: 0 50px;
+      position: relative;
+      left: 50%;
+      top: 380px;
+      transform: translate(-50%, -50%);
+    }
+
+    .header {
+      font-size: 38px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 200px;
+    }
+
+    .input-item {
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+      border: 0;
+      padding: 10px;
+      border-bottom: 1px solid rgb(128, 125, 125);
+      font-size: 15px;
+      outline: none;
+    }
+
+    .input-item::placeholder {
+      text-transform: uppercase;
+    }
+
+    .btn {
+      text-align: center;
+      padding: 10px;
+      width: 100%;
+      margin-top: 40px;
+      background-image: linear-gradient(to right, #a6c1ee, #fbc2eb);
+      color: #fff;
+    }
+
+    .msg {
+      text-align: center;
+      line-height: 88px;
+    }
+
+    a {
+      text-decoration-line: none;
+      color: #abc1ee;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="#" class="logo">Tagle</a>
+    <div class="mean-toggle"></div>
+    <nav>
+      <ul>
+        <li><a href="./home.html">主页</a></li>
+        <li><a href="./daily-task.html">日常任务</a></li>
+        <li><a href="./habit-task.html">我的习惯</a></li>
+        <li><a href="./diy-rule.html" class="active">添加待办</a></li>
+        <li><a href="./reward.html">兑换奖励</a></li>
+        <li><a href="./history.html">历史操作</a></li>
+      </ul>
+    </nav>
+    <div class="clear"></div>
+  </header>
+
+
+  <div class="login-wrapper">
+    <div class="header">ADD MISSION</div>
+    <div class="form-wrapper">
+      <input type="text" name="mission" placeholder="mission" class="input-item">
+      <label for="reward">奖励</label>
+      <select id="reward" name="reward">
+        <option value="2">2积分</option>
+        <option value="4">4积分</option>
+        <option value="6">6积分</option>
+      </select>
+      <label for="reward">期限</label>
+      <select id="time" name="time">
+        <option value="1">1天</option>
+        <option value="2">2天</option>
+        <option value="3">3天</option>
+        <option value="4">4天</option>
+        <option value="5">5天</option>
+        <option value="6">6天</option>
+        <option value="7">7天</option>
+      </select>
+      <input type="submit" value="Submit">
+    </div>
+  </div>
+
+
+
+  <!-- <div>
+  
+  <form action="/action_page.php">
+    <label for="fname">任务</label>
+    <input type="text" id="fname" name="firstname" placeholder="你的任务..">
+
+
+    <label for="reward">奖励</label>
+    <select id="reward" name="reward">
+      <option value="2">2积分</option>
+      <option value="4">4积分</option>
+      <option value="6">6积分</option>
+    </select>
+
+    <input type="submit" value="Submit">
+  </form>
+</div> -->
+
+  <script src="js/date.js"></script
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous">
+    </script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.mean-toggle').click(function () {
+        $('.mean-toggle').toggleClass('active')
+        $('nav').toggleClass('active')
+      })
+
+      $('nav ul li a').click(function () {
+        $('a').removeClass("active");
+        $(this).addClass("active");
+      })
+
+    })
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>daily-task</title>
+  <link rel="stylesheet" href="daily-task/daily-task.css" type="text/css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/2a361a68d2.js" crossorigin="anonymous"></script>
+  <script src="common/jquery.js"></script>
+</head>
+<body>
+<header>
+  <a href="#" class="logo">Tagle</a>
+  <div class="mean-toggle"></div>
+  <nav>
+    <ul>
+      <li><a href="./home.html">主页</a></li>
+      <li><a href="./daily-task.html" class="active">日常任务</a></li>
+      <li><a href="./habit-task.html">我的习惯</a></li>
+      <li><a href="./diy-rule.html">添加待办</a></li>
+      <li><a href="./reward.html">兑换奖励</a></li>
+      <li><a href="./history.html">历史操作</a></li>
+    </ul>
+  </nav>
+  <div class="clear"></div>
+</header>
+
+<table>
+  <thead>
+    <tr>
+    <th>任务</th>
+    <th>状态</th>
+    <th>期限</th>
+    <th>操作</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>数据库作业</td>
+      <td>未完成</td>
+      <td></td>
+      <td><button>完成</button></td>
+    </tr>
+    <tr>
+      <td>数据结构作业</td>
+      <td>未完成</td>
+      <td></td>
+      <td><button>完成</button></td>
+    </tr>
+    <tr>
+      <td>web大作业</td>
+      <td>已完成</td>
+      <td></td>
+      <td><button>完成</button></td>
+    </tr>
+    <tr>
+      <td>大物作业</td>
+      <td>已完成</td>
+      <td></td>
+      <td><button>完成</button></td>
+    </tr>
+    <tr>
+      <td>大物实验作业</td>
+      <td>已完成</td>
+      <td></td>
+      <td><button>完成</button></td>
+    </tr>
+    <tr>
+      <td>雅思作业</td>
+      <td>已完成</td>
+      <td></td>
+      <td><button>完成</button></td>
+    </tr>
+    <tr>
+      <td>财务作业</td>
+      <td>已完成</td>
+      <td></td>
+      <td><button>完成</button></td>
+    </tr>
+    <tr>
+      <td>拿东西</td>
+      <td>已完成</td>
+      <td></td>
+      <td><button>完成</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous">
+</script>
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    $('.mean-toggle').click(function()
+    {
+      $('.mean-toggle').toggleClass('active')
+      $('nav').toggleClass('active')
+    })
+
+    $('nav ul li a').click(function()
+    {
+      $('a').removeClass("active");
+      $(this).addClass("active");
+    })
+
+  })
+
+
+
+</script>
+</body>
+</html>
