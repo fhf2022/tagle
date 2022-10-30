@@ -5,17 +5,38 @@
   <title>daily-task</title>
   <link rel="stylesheet" href="daily-task/daily-task.css" type="text/css">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="normalize.css">
   <script src="https://kit.fontawesome.com/2a361a68d2.js" crossorigin="anonymous"></script>
   <script src="common/jquery.js"></script>
 </head>
+<style>
+  .inner{
+    visibility:hidden;
+    position: fixed; 
+    position:absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .inner-container{
+    background-color: white;
+    position: relative;
+  }
+  
+</style>
 <body>
 <header>
   <a href="#" class="logo">Tagle</a>
   <div class="mean-toggle"></div>
   <nav>
     <ul>
-      <li><a href="./home.html">主页</a></li>
-      <li><a href="./daily-task.html" class="active">日常任务</a></li>
+      <li><a href="./home.html">主页 <i class="fa-solid fa-house"></i></a></li>
+      <li><a href="./daily-task.html" class="active">日常任务 <i class="fa-solid fa-list-check"></i></a></li>
       <li><a href="./habit-task.html">我的习惯</a></li>
       <li><a href="./diy-rule.html">添加待办</a></li>
       <li><a href="./reward.html">兑换奖励</a></li>
@@ -38,54 +59,108 @@
       <td>数据库作业</td>
       <td>未完成</td>
       <td></td>
-      <td><button>完成</button></td>
+      <td><button class="test">完成</button>
+        <div class="inner">
+          <div class="inner-container">
+              <div>登记成功</div>
+          
+          <button class="close">关闭</button>
+        </div>
+      </div></td>
     </tr>
     <tr>
       <td>数据结构作业</td>
       <td>未完成</td>
       <td></td>
-      <td><button>完成</button></td>
+      <td><button class="test">完成</button>
+        <div class="inner">
+          <div class="inner-container">
+              <div>登记成功</div>
+          
+          <button class="close">关闭</button>
+        </div>
+      </div></td>
     </tr>
     <tr>
       <td>web大作业</td>
       <td>已完成</td>
       <td></td>
-      <td><button>完成</button></td>
+      <td><button class="test">完成</button>
+        <div class="inner">
+          <div class="inner-container">
+              <div>登记成功</div>
+          
+          <button class="close">关闭</button>
+        </div>
+      </div></td>
     </tr>
     <tr>
       <td>大物作业</td>
       <td>已完成</td>
       <td></td>
-      <td><button>完成</button></td>
+      <td><button class="test">完成</button>
+        <div class="inner">
+          <div class="inner-container">
+              <div>登记成功</div>
+          
+          <button class="close">关闭</button>
+        </div>
+      </div></td>
     </tr>
     <tr>
       <td>大物实验作业</td>
       <td>已完成</td>
       <td></td>
-      <td><button>完成</button></td>
+      <td><button class="test">完成</button>
+        <div class="inner">
+          <div class="inner-container">
+              <div>登记成功</div>
+          
+          <button class="close">关闭</button>
+        </div>
+      </div></td>
     </tr>
     <tr>
       <td>雅思作业</td>
       <td>已完成</td>
       <td></td>
-      <td><button>完成</button></td>
+      <td><button class="test">完成</button>
+        <div class="inner">
+          <div class="inner-container">
+              <div>登记成功</div>
+          
+          <button class="close">关闭</button>
+        </div>
+      </div></td>
     </tr>
     <tr>
       <td>财务作业</td>
       <td>已完成</td>
       <td></td>
-      <td><button>完成</button></td>
+      <td><button class="test">完成</button>
+        <div class="inner">
+          <div class="inner-container">
+              <div>登记成功</div>
+          
+          <button class="close">关闭</button>
+        </div>
+      </div></td>
     </tr>
     <tr>
       <td>拿东西</td>
       <td>已完成</td>
       <td></td>
-      <td><button>完成</button></td>
+      <td><button class="test">完成</button>
+        <div class="inner">
+          <div class="inner-container">
+              <div>登记成功</div>
+          
+          <button class="close">关闭</button>
+        </div>
+      </div></td>
     </tr>
   </tbody>
 </table>
-
-
 
 
 
@@ -111,6 +186,16 @@
 
   })
 
+  const tip = document.querySelector('.test')
+  const inner = document.querySelector('.inner')
+  console.log(inner);
+  tip.addEventListener('click',function(){
+    inner.style.visibility = 'visible'
+  })
+  const close = document.querySelector('.close')
+  close.addEventListener('click',function(){
+    inner.style.visibility = 'hidden'
+  })
 
 
 </script>
