@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>daily-task</title>
+  <link rel="stylesheet" href="daily-task/daily-task.css" type="text/css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="normalize.css">
+  <script src="https://kit.fontawesome.com/2a361a68d2.js" crossorigin="anonymous"></script>
+  <script src="common/jquery.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<style>
+  .inner {
+    visibility: hidden;
+    position: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .inner-container {
+    background-color: white;
+    position: relative;
+  }
+
+  button {
+    text-decoration: none;
+    background: #333;
+    border-radius: 5px;
+    color: white;
+    padding: 3px 8px;
+  }
+
+  nav a {
+    text-align: middel;
+    margin: 10px 0;
+    padding: 10px;
+  }
+</style>
+
+<body>
+  <header>
+    <a href="#" class="logo">Tagle</a>
+    <div class="mean-toggle"></div>
+    <nav>
+      <ul>
+        <li><a href="./home.html">主页 <i class="fa-solid fa-house"></i></a></li>
+        <li><a href="./daily-task.html" class="active">日常任务 <i class="fa-solid fa-list-check"></i></a></li>
+        <li><a href="./habit-task.html">我的习惯</a></li>
+        <li><a href="./diy-rule.html">登录</a></li>
+      </ul>
+    </nav>
+    <div class="clear"></div>
+  </header>
+
+  <table>
+    <thead>
+      <tr>
+        <th>任务</th>
+        <th>难度</th>
+        <th>期限</th>
+        <th>操作</th>
+    </thead>
+    <tbody>
+      <td>大物实验作业</td>
+      <td>3</td>
+      <td>
+        <div class="time">
+          <input type="date">
+        </div>
+      </td>
+      <td>
+        <button class="test" onclick='RemoveRow(this);'>完成</button>
+      </td>
+      </tr>
+
+
+
+    </tbody>
+  </table>
+  <nav><a href="#" id="add" onclick="AddRow();"><button>增加任务</button></a></nav>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous">
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.mean-toggle').click(function () {
+        $('.mean-toggle').toggleClass('active')
+        $('nav').toggleClass('active')
+      })
+
+      $('nav ul li a').click(function () {
+        $('a').removeClass("active");
+        $(this).addClass("active");
+      })
+
+    })
+
+    const tip = document.querySelector('.test')
+    const inner = document.querySelector('.inner')
+    console.log(inner);
+    tip.addEventListener('click', function () {
+      inner.style.visibility = 'visible'
+    })
+    const close = document.querySelector('.close')
+    close.addEventListener('click', function () {
+      inner.style.visibility = 'hidden'
+    })
+  </script>
+</body>
+
+</html>
+<script type="text/javascript">
+  var row_last_num = 0;
+
+  function AddRow() {
+    row_last_num += 1;
+    $("tbody").append("<tr id='tr" + row_last_num + "'>" +
+      "<td onclick='ChangeCell(this);'>输入任务</td>" +
+      "<td onclick='ChangeCell(this);'>输入难度</td>" +
+      "<td><div class='time'><input type='date'></div></td>" +
+      "<td><a href='#' class='remove' onclick='RemoveRow(this);'> <button>完成</button></a></td></tr>");
+  }
+
+  function RemoveRow(o) {
+    $(o).parent().parent().remove();
+  }
+
+  //改变标签类型为<input>
+  function ChangeCell(o) {
+    $(o).replaceWith("<td onclick='ChangeCell(this);' style='padding:0'><input type='text' class='current' onblur='UpdateCell(event);'></td>");
+    $("input.current").focus();
+  }
+
+  //修改标签类型为<td>并且将input中的值赋给该标签的text
+  //todo: 当键盘输入回车时，完成当前输入
+  function UpdateCell(event) {
+    var o = event.target;
+    var elem = $(o);
+    var temp = elem.val();
+    var info = '';
+    if (temp && temp != "") {
+      elem.replaceWith(temp);
+    } else {
+      //alert("字段不得为空！");
+      //event.preventDefault();
+      //event.stopPropagation
+      elem.focus();
+      info = '字段不得为空！';
+    }
+    $('.info').text(info);
+  }
+</script>

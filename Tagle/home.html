@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>home</title>
+  <link rel="stylesheet" href="home/home.css" type="text/css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="normalize.css">
+  <script src="https://kit.fontawesome.com/2a361a68d2.js" crossorigin="anonymous"></script>
+  <script src="common/jquery.js"></script>
+</head>
+<body>
+<header>
+  <a href="#" class="logo">Tagle</a>
+  <div class="mean-toggle"></div>
+  <nav>
+    <ul>
+      <li>
+        <a href="./home.html" class="active">
+          主页
+          <i class="fa-solid fa-house"></i>
+        </a>
+      </li>
+      <li>
+        <a href="./daily-task.html">
+          日常任务
+          <i class="fa-solid fa-list-check"></i>
+        </a>
+      </li>
+      <li>
+        <a href="./habit-task.html">
+          我的习惯
+        </a>
+      </li>
+      <li>
+        <a href="./diy-rule.html">
+          登录
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div class="clear"></div>
+</header>
+<div class="main">
+  <div class="avatar"></div>
+  <div class="avatar-welcome">
+    fhf2022,Welcome to Tagle!
+  </div>
+  <div class="home-content">
+    <p>欢迎来到Tagle，在这里，你可以制定自己的计划和习惯，帮助你养成一个更加自律的自己</p>
+    <br>
+    <br>
+    <br>
+    <div class="task" id="daily-task-event">
+      <span>今天，你还有3个任务没有完成</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </div>
+    <div class="task" id="habit-task-event">
+      <span>现在你还有2个习惯待养成</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </div>
+    <p>剩余积分：50</p>
+  </div>
+</div>
+
+
+
+
+
+
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous">
+</script>
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    $('.mean-toggle').click(function()
+    {
+      $('.mean-toggle').toggleClass('active')
+      $('nav').toggleClass('active')
+    })
+
+    $('nav ul li a').click(function()
+    {
+      $('a').removeClass("active");
+      $(this).addClass("active");
+    })
+
+
+    $('#daily-task-event').click(function (){
+        window.location.href = "./daily-task.html";
+    })
+
+    $('#habit-task-event').click(function (){
+        window.location.href = "./habit-task.html";
+    })
+  })
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Navigation Bar</title>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="home/home.css" type="text/css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/2a361a68d2.js" crossorigin="anonymous"></script>
+  <script src="common/jquery.js"></script>
+  <style>
+    table {
+      margin: auto;
+      font-size: 30px;
+    }
+
+    td {
+      margin: 10px;
+      padding: 30px;
+    }
+
+    td {
+      padding: 30px;
+      border: #28b2b2 2px solid;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="#" class="logo">Tagle</a>
+    <div class="mean-toggle"></div>
+    <nav>
+      <ul>
+        <li><a href="./home.html">主页 <i class="fa-solid fa-house"></i></a></li>
+        <li><a href="./daily-task.html">日常任务 <i class="fa-solid fa-list-check"></i></a></li>
+        <li><a href="./habit-task.html" class="active">我的习惯</a></li>
+        <li><a href="./diy-rule.html">登录</a></li>
+      </ul>
+    </nav>
+    <div class="clear"></div>
+  </header>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>习惯</th>
+        <th>坚持天数</th>
+        <th>操作</th>
+        <th>介绍</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>锻炼一个小时</td>
+        <td>4</td>
+        <td><button onclick="insist()">坚持</button></td>
+        <td><button onclick="checkIntroduce('./exercise.html')">查看介绍</button></td>
+      </tr>
+      <tr>
+        <td>坚持喝水</td>
+        <td>4</td>
+        <td><button onclick="insist()">坚持</button></td>
+        <td><button onclick="checkIntroduce(href)">查看介绍</button></td>
+      </tr>
+      <tr>
+        <td>每日早睡</td>
+        <td>4</td>
+        <td><button onclick="insist()">坚持</button></td>
+        <td><button onclick="checkIntroduce(href)">查看介绍</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous">
+  </script>
+  <script type="text/javascript">
+    function checkIntroduce(href){
+      document.location.href = href
+    }
+
+    function insist(){
+      alert("坚持成功！,1s后刷新页面")
+
+      setTimeout(()=>{
+        location.reload()
+      },1000)
+    }
+
+
+    $(document).ready(function () {
+      $('.mean-toggle').click(function () {
+        $('.mean-toggle').toggleClass('active')
+        $('nav').toggleClass('active')
+      })
+
+      $('nav ul li a').click(function () {
+        $('a').removeClass("active");
+        $(this).addClass("active");
+      })
+
+    })
+  </script>
+</body>
+
+</html>

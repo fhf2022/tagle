@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Navigation Bar</title>
+  <link rel="stylesheet" href="home/home.css" type="text/css">
+  <link rel="stylesheet" href="normalize.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/2a361a68d2.js" crossorigin="anonymous"></script>
+  <script src="common/jquery.js"></script>
+  <style>
+    input[type=text],
+    select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type=submit] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    form {
+      width: 75%;
+      margin: auto;
+    }
+
+
+
+
+
+    .login-wrapper {
+      background-color: bisque;
+      width: 400px;
+      height: 400px;
+      border-radius: 15px;
+      padding: 30px;
+      position: relative;
+      left: 50%;
+      top: 250px;
+      transform: translate(-50%, -50%);
+    }
+
+    .header {
+      font-size: 38px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .input {
+      width: 100%;
+      margin: 30px 0;
+      border: 0;
+      padding: 10px;
+    }
+
+    .input-item {
+      display: block;
+      border-bottom: 1px solid rgb(185, 40, 40);
+      font-size: 15px;
+      outline: none;
+    }
+
+    .input-item::placeholder {
+      text-transform: uppercase;
+    }
+
+    .btn {
+      text-align: center;
+      padding: 10px;
+      width: 100%;
+      margin-top: 30px;
+      background-image: linear-gradient(to right, #a6c1ee, #fbc2eb);
+      color: #fff;
+    }
+
+    .msg {
+      text-align: center;
+      line-height: 88px;
+    }
+
+    a {
+      text-decoration-line: none;
+      color: #abc1ee;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="#" class="logo">Tagle</a>
+    <div class="mean-toggle"></div>
+    <nav>
+      <ul>
+        <li><a href="./home.html">主页 <i class="fa-solid fa-house"></i></a></li>
+        <li><a href="./daily-task.html">日常任务 <i class="fa-solid fa-list-check"></i></a></li>
+        <li><a href="./habit-task.html">我的习惯</a></li>
+        <li><a href="./diy-rule.html" class="active">登录</a></li>
+      </ul>
+    </nav>
+    <div class="clear"></div>
+  </header>
+
+
+  <div class="login-wrapper">
+    <div class="header">登录</div>
+    <div class="form-wrapper">
+      <div class="input" style="display:flex">
+        <span style="width:60px;margin: 20px 10px 0 0;">用户名</span>
+        <input type="text" name="mission" placeholder="请输入用户名" class="input-item">
+      </div>
+
+      <div class="input" style="display:flex">
+        <span style="width:60px;margin: 20px 10px 0 0;">密码</span>
+        <input type="text" name="mission" placeholder="请输入密码" class="input-item">
+      </div>
+
+
+      <input type="submit" value="Submit">
+    </div>
+  </div>
+
+
+  <script src="js/date.js">
+  </script>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous">
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.mean-toggle').click(function () {
+        $('.mean-toggle').toggleClass('active')
+        $('nav').toggleClass('active')
+      })
+
+      $('nav ul li a').click(function () {
+        $('a').removeClass("active");
+        $(this).addClass("active");
+      })
+
+    })
+  </script>
+</body>
+
+</html>
